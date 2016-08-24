@@ -1,6 +1,0 @@
-{
-  "projects": {
-    "default": "firebase-pivotal-expert",
-    "staging": "firebase-pivotal-expert"
-  }
-}
