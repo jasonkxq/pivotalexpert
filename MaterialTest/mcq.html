@@ -4,26 +4,25 @@
     <meta charset="UTF-8">
     <title>Angular Material Design Starter App</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/angular-material.min.css">
+        <link rel="stylesheet" href="font-awesome-4.6.3/font-awesome-4.6.3/css/font-awesome.min.css">
   </head>
   <body>
     <html lang="en" ng-app="StarterApp">
-  <head>
-    <link rel="stylesheet" href="css/angular-material.min.css">
-    <link rel="stylesheet" href="font-awesome-4.6.3/font-awesome-4.6.3/css/font-awesome.min.css">
-  </head>
-  <body layout="column">
+  <html lang="en" ng-app="codeVantage">
+  <body layout="column" ng-controller="AppCtrl">
     <md-toolbar class="md-hue-1">
       <div class="md-toolbar-tools">
         <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
           <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
         </md-button>
         <h2>
-          <span>Pivotal experts</span>
+          <span>Pivotal Experts</span>
         </h2>
         <span flex></span>
-        <md-button style="margin-right:10px">course</md-button>
-        <md-button style="margin-right:10px">chat</md-button>
-        <md-button style="margin-right:10px">[5]</md-button>
+        <md-button style="margin-right:10px">Course</md-button>
+        <md-button style="margin-right:10px">Chat</md-button>
+        <md-button style="margin-right:10px">[ {{numAchievement}} ]</md-button>
         <md-button style="margin-right:10px" class="md-fab md-primary md-hue-2" aria-label="Profile">
             <md-icon md-svg-src="img/icons/ic_people_24px.svg"></md-icon>
         </md-button>
