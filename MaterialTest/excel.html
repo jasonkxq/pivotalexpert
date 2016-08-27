@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular Material Design Starter App</title>
+        <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <html lang="en" ng-app="StarterApp">
+  <head>
+    <link rel="stylesheet" href="css/angular-material.min.css">
+    <link rel="stylesheet" href="font-awesome-4.6.3/font-awesome-4.6.3/css/font-awesome.min.css">
+  </head>
+  <body layout="column">
+    <md-toolbar class="md-hue-1">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+          <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        </md-button>
+        <h2>
+          <span>Pivotal experts</span>
+        </h2>
+        <span flex></span>
+        <md-button style="margin-right:10px">course</md-button>
+        <md-button style="margin-right:10px">chat</md-button>
+        <md-button style="margin-right:10px">[5]</md-button>
+        <md-button style="margin-right:10px" class="md-fab md-primary md-hue-2" aria-label="Profile">
+            <md-icon md-svg-src="img/icons/ic_people_24px.svg"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <!--left bar-->
+    <div layout="row" flex>
+      <div style="position: relative"class="md-whiteframe-z2" layout-padding flex="30">
+        <!--questions and submmit-->
+        <h2>Question:</h2>
+        <p>Your task is to create an object that can do lasfj alsfkja dfslasflas hksl hfksadfh akslfhl askjfh alkfhkasfh hkashk hkalsfhkasfdkshfl</p>
+        <div style="padding: 20px">
+          <md-button class="md-raised md-primary" style="width: 100%">Submit</md-button>
+        </div>
+        <!--if ans is incorrect display this-->
+        <div style="padding: 20px">
+          <div class="md-whiteframe-z1">
+            <div style="padding: 10px">
+              <i style="color:red" class="fa fa-times-circle" aria-hidden="true"></i> <strong>Incorrect Submission</strong>
+            </div>
+            <md-divider></md-divider>
+            <md-content style="padding: 0 10px; max-height: 200px">
+              <h4 style="margin: 0.5em 0">Hint:</h4>
+              <p style="margin: 0.5em 0">Revisit the video lecture or slides.</p>
+          </md-content>
+          </div>
+        </div>
+        <!--help button-->
+        <md-button style="position:absolute; bottom:0; right:0; margin: 10px" ng-click="showGridBottomSheet()">
+          <i class="fa fa-info-circle" aria-hidden="true"></i>
+          Help
+        </md-button>
+      </div>
+      <div flex="70" layout="column">
+        <div style="padding: 0 20px">
+          <h2>Chapter 2-1</h2>
+        </div>
+        <md-divider></md-divider>
+        <div style="padding: 20px" flex>
+          <iframe style="height: 400px; width: 100%" src="https://docs.google.com/spreadsheets/d/15BR_mgdyQ1aYxoWzOosc2QaC6wLEdwI9LaY_BbA4rFc/pubhtml?widget=true&amp;headers=false"></iframe>
+          <div style="padding: 20px 50px">
+            <md-button class="md-raised pull-right">Submit</md-button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Angular Material Dependencies -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/angular-aria.min.js"></script>
+    <script src="js/angular-material.min.js"></script>
+    <script src="js/angular-material-icons.min.js"></script>
+  </body>
+</html>
+
+        <script src="js/excel.js"></script>
+
+
+
+
+  </body>
+</html>
