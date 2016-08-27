@@ -1,6 +1,7 @@
-var app = angular.module('StarterApp', ['ngMaterial', 'ngMdIcons']);
+var app = angular.module('codeVantage', ['ngMaterial', 'ngMdIcons']);
 
 app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog){
+  $scope.displayName = "HelloThere"
   $scope.firstName = "Hello"
   $scope.lastName = "World"
   $scope.email = "Helloworld@domain.com"
@@ -55,6 +56,16 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog',
       {
         title: 'Chapter 1 - Google Sheets: Question 5',
         qnType: "Multiple Choice"
+      },
+    ];
+  $scope.projects = [
+      {
+        title: 'Amazing Time Saving Project',
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      },
+      {
+        title: 'Another Amazing Time Saving Project',
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
       },
     ];
   $scope.alert = '';

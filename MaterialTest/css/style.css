@@ -37,3 +37,14 @@ md-sidenav {
 .user-avatar {
   border-radius: 99%;
 }
+
+.text-center{
+  text-align: center;
+}
+.profile-head{
+  font-size: 15px;
+}
+.profile-photo{
+  width: auto;
+  height: 150px;
+}
