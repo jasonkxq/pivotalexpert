@@ -26,14 +26,7 @@
             <ng-md-icon icon="more_vert"></ng-md-icon>
           </md-button>
         </div>
-        <md-tabs md-stretch-tabs class="md-primary" md-selected="data.selectedIndex">
-          <md-tab id="tab1" aria-controls="tab1-content">
-            Details
-          </md-tab>
-          <md-tab id="tab2" aria-controls="tab2-content">
-            Completed Projects
-          </md-tab>
-        </md-tabs>
+
       </md-toolbar>
       <md-toolbar class="md-hue-1" ng-show="showSearch">
         <div class="md-toolbar-tools">
@@ -59,86 +52,62 @@
       <md-content flex md-scroll-y>
         <ui-view layout="column" layout-fill layout-padding>
           <div class="inset" hide-sm></div>
-            <ng-switch on="data.selectedIndex" class="tabpanel-container">
-              <div role="tabpanel"
-                   id="tab1-content"
-                   aria-labelledby="tab1"
-                   ng-switch-when="0"
-                   md-swipe-left="next()"
-                   md-swipe-right="previous()"
-                   layout="row" layout-align="center center">
                   <md-card flex-gt-sm="90" flex-gt-md="80">
                     <md-card-content>
-
                     <div class="text-center profile-head">
                     <img src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="Profile Photo" class="profile-photo">
                     <br>
+                    <h1>[ {{numAchievement}} ]</h1>
           					<h2>User: {{displayName}}</h2>
           						<sup>
           							<a href="#/changeDisplayName">
           								<i class="fa fa-pencil" style="font-size: small" aria-hidden="true"></i>
           							</a>
           						</sup>
-
           						<h2>Email: {{email}}</h2>
           					</div>
 
                     <md-divider></md-divider>
-                  <h2>Completed Courses</h2>
-                      <md-list>
-                        <md-item ng-repeat="item in courseMaterial | filter:search">
 
-                          <md-item-content>
-                            <div class="md-tile-content">
-                              <h3>{{item.title}}</h3>
-                              <p>
-                                Type: {{item.qnType}}
-                              </p>
-                            </div>
-                            <div class="md-tile-right inset" hide-sm>
-                              <md-checkbox ng-disabled="true" aria-label="Disabled checked checkbox" ng-model="data.cb" ng-init="data.cb=true">
-                            </div>
-                          </md-item-content>
-                          <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
-                          <md-divider hide-gt-sm ng-if="!$last"></md-divider>
-                        </md-item>
-                        <md-divider></md-divider>
-                      </md-list>
-                    </md-card-content>
+                    <h2>Completed Projects</h2>
+                        <md-list>
+                          <md-item ng-repeat="project in projects | filter:search | orderBy:'title'">
+                            <md-item-content>
+                              <div class="md-tile-content">
+                                <h3>{{project.title}}</h3>
+                                <p>
+                                  {{project.description}}
+                                </p>
+                              </div>
+                            </md-item-content>
+                            <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+                            <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+                          </md-item>
+                          <md-divider></md-divider>
+                        </md-list>
+
+                    <h2>Completed Courses</h2>
+                        <md-list>
+                          <md-item ng-repeat="item in courseMaterial | filter:search">
+                            <md-item-content>
+                              <div class="md-tile-content">
+                                <h3>{{item.title}}</h3>
+                                <p>
+                                  Type: {{item.qnType}}
+                                </p>
+                              </div>
+                              <div class="md-tile-right inset" hide-sm>
+                                <md-checkbox ng-disabled="true" aria-label="Disabled checked checkbox" ng-model="data.cb" ng-init="data.cb=true">
+                              </div>
+                            </md-item-content>
+                            <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+                            <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+                          </md-item>
+                          <md-divider></md-divider>
+                        </md-list>
+                      </md-card-content>
                   </md-card>
               </div>
-              <div role="tabpanel"
-                   id="tab2-content"
-                   aria-labelledby="tab2"
-                   ng-switch-when="1"
-                   md-swipe-left="next()"
-                   md-swipe-right="previous()"
-                   layout="row" layout-align="center center">
-                  <md-card flex-gt-sm="90" flex-gt-md="80">
-                    <md-card-content>
-                      <h2>Completed Projects</h2>
-                      <md-list>
-                        <md-item ng-repeat="project in projects | filter:search | orderBy:'title'">
-                          <md-item-content>
-                            <div class="md-tile-content">
-                              <h3>{{project.title}}</h3>
-                              <p>
-                                {{project.description}}
-                              </p>
-                            </div>
-                          </md-item-content>
-                          <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
-                          <md-divider hide-gt-sm ng-if="!$last"></md-divider>
-                        </md-item>
-                        <md-divider></md-divider>
-
-                      </md-list>
-                    </md-card-content>
-                  </md-card>
-              </div>
-
-          </ng-switch>
-
         </ui-view>
       </md-content>
     </div>

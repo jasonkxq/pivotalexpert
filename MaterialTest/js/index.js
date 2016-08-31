@@ -3,6 +3,7 @@ var app = angular.module('codeVantage', ['ngMaterial', 'ngMdIcons']);
 app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog){
   $scope.displayName = "HelloThere"
   $scope.firstName = "Hello"
+  $scope.numAchievement = "5"
   $scope.lastName = "World"
   $scope.email = "Helloworld@domain.com"
   $scope.toggleSidenav = function(menuId) {

@@ -31,4 +31,8 @@ app.controller('AppCtrl', function($scope, $timeout, $mdBottomSheet, $mdToast) {
           );
     });
   };
+
+app.controller('AppCtrl', function($scope) {
+    $scope.numAchievement = "5"
+
 });
