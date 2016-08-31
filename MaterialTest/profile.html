@@ -8,122 +8,93 @@
   </head>
   <body>
     <html lang="en" ng-app="codeVantage">
-  <body layout="row" ng-controller="AppCtrl">
-    <div layout="column" class="relative" layout-fill role="main">
-
-      <md-button class="md-fab md-fab-bottom-right" aria-label="Settings" ng-click="showSettings($event)">
-        <ng-md-icon icon="settings"></ng-md-icon>
-      </md-button>
-
-      <md-toolbar ng-show="!showSearch">
+      <div layout="column" ng-controller="AppCtrl" class="relative" layout-fill role="main">
+      <md-toolbar>
         <div class="md-toolbar-tools">
-          <h3>Profile</h3>
+          <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+          </md-button>
+          <h2>
+            <span>Pivotal experts</span>
+          </h2>
           <span flex></span>
-          <md-button aria-label="Search" ng-click="showSearch = !showSearch">
-            <ng-md-icon icon="search"></ng-md-icon>
-          </md-button>
-          <md-button aria-label="Open Settings" ng-click="showListBottomSheet($event)">
-            <ng-md-icon icon="more_vert"></ng-md-icon>
-          </md-button>
-        </div>
-
-      </md-toolbar>
-      <md-toolbar class="md-hue-1" ng-show="showSearch">
-        <div class="md-toolbar-tools">
-          <md-button ng-click="showSearch = !showSearch" aria-label="Back">
-            <ng-md-icon icon="arrow_back"></ng-md-icon>
-          </md-button>
-          <h3 flex="10">
-            Back
-          </h3>
-          <md-input-container md-theme="input" flex>
-            <label>&nbsp;</label>
-            <input ng-model="search.title" placeholder="enter search">
-          </md-input-container>
-          <md-button aria-label="Search" ng-click="showSearch = !showSearch">
-            <ng-md-icon icon="search"></ng-md-icon>
-          </md-button>
-          <md-button aria-label="Open Settings" ng-click="showListBottomSheet($event)">
-            <ng-md-icon icon="more_vert"></ng-md-icon>
+          <md-button style="margin-right:10px">course</md-button>
+          <md-button style="margin-right:10px">chat</md-button>
+          <md-button style="margin-right:10px">[5]</md-button>
+          <md-button style="margin-right:10px" class="md-fab md-primary md-hue-2" aria-label="Profile">
+              <md-icon md-svg-src="img/icons/ic_people_24px.svg"></md-icon>
           </md-button>
         </div>
-
       </md-toolbar>
+      <div layout="row" flex>
+        <div flex="15"></div>
+        <div class="md-whiteframe-z2" layout="column" flex="70" style="padding: 0px 20px">
       <md-content flex md-scroll-y>
-        <ui-view layout="column" layout-fill layout-padding>
-          <div class="inset" hide-sm></div>
-                  <md-card flex-gt-sm="90" flex-gt-md="80">
-                    <md-card-content>
-                    <div class="text-center profile-head">
-                    <img src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="Profile Photo" class="profile-photo">
-                    <br>
-                    <h1>[ {{numAchievement}} ]</h1>
-          					<h2>User: {{displayName}}</h2>
-          						<sup>
-          							<a href="#/changeDisplayName">
-          								<i class="fa fa-pencil" style="font-size: small" aria-hidden="true"></i>
-          							</a>
-          						</sup>
-          						<h2>Email: {{email}}</h2>
-          					</div>
+                <md-card-content>
+                <div class="text-center profile-head">
+                <img src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="Profile Photo" class="profile-photo">
+                <br>
+                <h1>[ {{numAchievement}} ]</h1>
+      					<h2>User: {{displayName}}</h2>
+      						<sup>
+      							<a href="#/changeDisplayName">
+      								<i class="fa fa-pencil" style="font-size: small" aria-hidden="true"></i>
+      							</a>
+      						</sup>
+      						<h2>Email: {{email}}</h2>
+      					</div>
 
-                    <md-divider></md-divider>
+                <md-divider></md-divider>
 
-                    <h2>Completed Projects</h2>
-                        <md-list>
-                          <md-item ng-repeat="project in projects | filter:search | orderBy:'title'">
-                            <md-item-content>
-                              <div class="md-tile-content">
-                                <h3>{{project.title}}</h3>
-                                <p>
-                                  {{project.description}}
-                                </p>
-                              </div>
-                            </md-item-content>
-                            <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
-                            <md-divider hide-gt-sm ng-if="!$last"></md-divider>
-                          </md-item>
-                          <md-divider></md-divider>
-                        </md-list>
+                <h2>Completed Projects</h2>
+                    <md-list>
+                      <md-item ng-repeat="project in projects | filter:search | orderBy:'title'">
+                        <md-item-content>
+                          <div class="md-tile-content">
+                            <h3>{{project.title}}</h3>
+                            <p>
+                              {{project.description}}
+                            </p>
+                          </div>
+                        </md-item-content>
+                        <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+                        <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+                      </md-item>
+                      <md-divider></md-divider>
+                    </md-list>
 
-                    <h2>Completed Courses</h2>
-                        <md-list>
-                          <md-item ng-repeat="item in courseMaterial | filter:search">
-                            <md-item-content>
-                              <div class="md-tile-content">
-                                <h3>{{item.title}}</h3>
-                                <p>
-                                  Type: {{item.qnType}}
-                                </p>
-                              </div>
-                              <div class="md-tile-right inset" hide-sm>
-                                <md-checkbox ng-disabled="true" aria-label="Disabled checked checkbox" ng-model="data.cb" ng-init="data.cb=true">
-                              </div>
-                            </md-item-content>
-                            <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
-                            <md-divider hide-gt-sm ng-if="!$last"></md-divider>
-                          </md-item>
-                          <md-divider></md-divider>
-                        </md-list>
-                      </md-card-content>
-                  </md-card>
-              </div>
-        </ui-view>
+                <h2>Completed Courses</h2>
+                    <md-list>
+                      <md-item ng-repeat="item in courseMaterial | filter:search">
+                        <md-item-content>
+                          <div class="md-tile-content">
+                            <h3>{{item.title}}</h3>
+                            <p>
+                              Type: {{item.qnType}}
+                            </p>
+                          </div>
+                          <div class="md-tile-right inset" hide-sm>
+                            <md-checkbox ng-disabled="true" aria-label="Disabled checked checkbox" ng-model="data.cb" ng-init="data.cb=true">
+                          </div>
+                        </md-item-content>
+                        <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+                        <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+                      </md-item>
+                      <md-divider></md-divider>
+                    </md-list>
+                  </md-card-content>
       </md-content>
-    </div>
+      </div>
+      </div>
+      </div>
     <!-- Angular Material Dependencies -->
     <script src="js/angular.min.js"></script>
     <script src="js/angular-animate.min.js"></script>
     <script src="js/angular-aria.min.js"></script>
     <script src="js/angular-material.min.js"></script>
     <script src="js/angular-material-icons.min.js"></script>
-  </body>
-</html>
 
         <script src="js/index.js"></script>
-
-
-
-
+<script src="js/excel.js"></script>
   </body>
 </html>
