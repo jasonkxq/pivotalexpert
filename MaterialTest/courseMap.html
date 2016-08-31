@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Codevantage</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/angular-material.min.css">
+  </head>
+  <body>
+    <html lang="en" ng-app="codeVantage">
+  <body layout="row" ng-controller="AppCtrl">
+
+    <div layout="column" class="relative" layout-fill role="main">
+
+      <md-button class="md-fab md-fab-bottom-right" aria-label="Settings" ng-click="showSettings($event)">
+        <ng-md-icon icon="settings"></ng-md-icon>
+      </md-button>
+      <md-toolbar ng-show="!showSearch">
+        <div class="md-toolbar-tools">
+          <md-button ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
+            <ng-md-icon icon="menu"></ng-md-icon>
+          </md-button>
+          <h3>
+            Course Map
+          </h3>
+          <span flex></span>
+          <md-button aria-label="Search" ng-click="showSearch = !showSearch">
+            <ng-md-icon icon="search"></ng-md-icon>
+          </md-button>
+          <md-button aria-label="Open Settings" ng-click="showListBottomSheet($event)">
+            <ng-md-icon icon="more_vert"></ng-md-icon>
+          </md-button>
+        </div>
+        <md-tabs md-stretch-tabs class="md-primary" md-selected="data.selectedIndex">
+          <md-tab id="tab1" aria-controls="tab1-content">
+            Full Course Map
+          </md-tab>
+          <md-tab id="tab2" aria-controls="tab2-content">
+            Completed
+          </md-tab>
+        </md-tabs>
+      </md-toolbar>
+      <md-toolbar class="md-hue-1" ng-show="showSearch">
+        <div class="md-toolbar-tools">
+          <md-button ng-click="showSearch = !showSearch" aria-label="Back">
+            <ng-md-icon icon="arrow_back"></ng-md-icon>
+          </md-button>
+          <h3 flex="10">
+            Back
+          </h3>
+          <md-input-container md-theme="input" flex>
+            <label>&nbsp;</label>
+            <input ng-model="search.title" placeholder="enter search">
+          </md-input-container>
+          <md-button aria-label="Search" ng-click="showSearch = !showSearch">
+            <ng-md-icon icon="search"></ng-md-icon>
+          </md-button>
+          <md-button aria-label="Open Settings" ng-click="showListBottomSheet($event)">
+            <ng-md-icon icon="more_vert"></ng-md-icon>
+          </md-button>
+        </div>
+
+      </md-toolbar>
+      <md-content flex md-scroll-y>
+        <ui-view layout="column" layout-fill layout-padding>
+          <div class="inset" hide-sm></div>
+            <ng-switch on="data.selectedIndex" class="tabpanel-container">
+              <div role="tabpanel"
+                   id="tab1-content"
+                   aria-labelledby="tab1"
+                   ng-switch-when="0"
+                   md-swipe-left="next()"
+                   md-swipe-right="previous()"
+                   layout="row" layout-align="center center">
+                  <md-card flex-gt-sm="90" flex-gt-md="80">
+                    <md-card-content>
+                      <h2>Course Map</h2>
+                      <md-list>
+                        <md-item ng-repeat="item in courseMaterial | filter:search">
+                          <md-item-content>
+                            <div class="md-tile-content">
+                              <h3>{{item.title}}</h3>
+                              <p>
+                                Type: {{item.qnType}}
+                              </p>
+                            </div>
+                            <div class="md-tile-right inset" hide-sm>
+                              <md-checkbox ng-disabled="true" aria-label="Disabled checked checkbox" ng-model="data.cb" ng-init="data.cb=true">
+                            </div>
+                          </md-item-content>
+                          <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+                          <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+                        </md-item>
+                        <md-divider></md-divider>
+                      </md-list>
+                    </md-card-content>
+                  </md-card>
+              </div>
+              <div role="tabpanel"
+                   id="tab2-content"
+                   aria-labelledby="tab2"
+                   ng-switch-when="1"
+                   md-swipe-left="next()"
+                   md-swipe-right="previous()"
+                   layout="row" layout-align="center center">
+                  <md-card flex-gt-sm="90" flex-gt-md="80">
+                    <md-card-content>
+                      <h2>Completed</h2>
+                      <md-list>
+                        <md-item ng-repeat="item in courseMaterial | filter:search | orderBy:'title'">
+                          <md-item-content>
+                            <div class="md-tile-content">
+                              <h3>{{item.title}}</h3>
+                              <p>
+                                Type: {{item.qnType}}
+                              </p>
+                            </div>
+                            <div class="md-tile-right inset" hide-sm>
+                              <md-checkbox ng-disabled="true" aria-label="Disabled checked checkbox" ng-model="data.cb" ng-init="data.cb=true">
+                            </div>
+                          </md-item-content>
+                          <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+                          <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+                        </md-item>
+                        <md-divider></md-divider>
+
+                      </md-list>
+                    </md-card-content>
+                  </md-card>
+              </div>
+
+          </ng-switch>
+
+        </ui-view>
+      </md-content>
+    </div>
+    <!-- Angular Material Dependencies -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/angular-aria.min.js"></script>
+    <script src="js/angular-material.min.js"></script>
+    <script src="js/angular-material-icons.min.js"></script>
+  </body>
+</html>
+
+        <script src="js/index.js"></script>
+
+
+
+
+  </body>
+</html>
