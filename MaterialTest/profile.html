@@ -15,7 +15,7 @@
             <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
           </md-button>
           <h2>
-            <span>Pivotal experts</span>
+            <span>Pivotal Expert</span>
           </h2>
           <span flex></span>
           <md-button style="margin-right:10px" href="./courseMap.html" >course</md-button>
@@ -28,8 +28,8 @@
       </md-toolbar>
       <div layout="row" flex>
         <div flex="15"></div>
-        <div class="md-whiteframe-z2" layout="column" flex="70" style="padding: 0px 20px">
-      <md-content flex md-scroll-y>
+        <div class="md-whiteframe-z2" layout="column" flex="70" style="padding: 15px 20px">
+          <md-content flex md-scroll-y>
                 <md-card-content>
                 <div class="text-center profile-head">
                 <img src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="Profile Photo" class="profile-photo">
@@ -45,8 +45,9 @@
       					</div>
 
                 <md-divider></md-divider>
-
-                <h2>Completed Projects</h2>
+                <md-divider></md-divider>
+                <md-divider></md-divider>
+                <u><h2>Completed Projects</h2></u>
                     <md-list>
                       <md-item ng-repeat="project in projects | filter:search | orderBy:'title'">
                         <md-item-content>
@@ -57,14 +58,17 @@
                             </p>
                           </div>
                         </md-item-content>
-                        <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
-                        <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+                        <md-divider ng-if="!$last"></md-divider>
                       </md-item>
                       <md-divider></md-divider>
                     </md-list>
 
-                <h2>Completed Courses</h2>
+                <md-divider></md-divider>
+                <md-divider></md-divider>
+                <u><h2>Completed Courses</h2></u>
                     <md-list>
+
+                        <h2>Chapter 1: Spreadsheets</h2>
                       <md-item ng-repeat="item in courseMaterial | filter:search">
                         <md-item-content>
                           <div class="md-tile-content">
@@ -74,11 +78,10 @@
                             </p>
                           </div>
                           <div class="md-tile-right inset" hide-sm>
-                            <md-checkbox ng-disabled="true" aria-label="Disabled checked checkbox" ng-model="data.cb" ng-init="data.cb=true">
-                          </div>
+                          <img class="coursemap-check" ng-src="images/check-circle-outline-128.png">
+                        </div>
                         </md-item-content>
-                        <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
-                        <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+                        <md-divider ng-if="!$last"></md-divider>
                       </md-item>
                       <md-divider></md-divider>
                     </md-list>

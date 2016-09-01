@@ -11,28 +11,34 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog',
   };
   $scope.courseMaterial = [
       {
-        title: 'Chapter 1 - Google Sheets: Cell Reference',
-        qnType: "Video"
+        title: 'Cell Reference',
+        qnType: "Video",
+        qnProg: true
       },
       {
-        title: 'Chapter 1 - Google Sheets: Question 1',
-        qnType: "Spreadsheet"
+        title: 'Question 1',
+        qnType: "Spreadsheet",
+        qnProg: true
       },
       {
-        title: 'Chapter 1 - Google Sheets: Question 2',
-        qnType: "Spreadsheet"
+        title: 'Question 2',
+        qnType: "Spreadsheet",
+        qnProg: true
       },
       {
-        title: 'Chapter 1 - Google Sheets: Question 3',
-        qnType: "Multiple Choice"
+        title: 'Question 3',
+        qnType: "Multiple Choice",
+        qnProg: true
       },
       {
-        title: 'Chapter 1 - Google Sheets: Question 4',
-        qnType: "Multiple Choice"
+        title: 'Question 4',
+        qnType: "Multiple Choice",
+        qnProg: true
       },
       {
-        title: 'Chapter 1 - Google Sheets: Question 5',
-        qnType: "Multiple Choice"
+        title: 'Question 5',
+        qnType: "Multiple Choice",
+        qnProg: false
       },
     ];
   $scope.projects = [

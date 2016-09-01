@@ -18,7 +18,7 @@
             <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
           </md-button>
           <h2>
-            <span>Pivotal experts</span>
+            <span>Pivotal Expert</span>
           </h2>
           <span flex></span>
           <md-button style="margin-right:10px" href="./courseMap.html" >course</md-button>
@@ -28,102 +28,79 @@
               <md-icon md-svg-src="img/icons/ic_people_24px.svg"></md-icon>
           </md-button>
         </div>
-        <md-tabs md-stretch-tabs class="md-primary" md-selected="data.selectedIndex">
-          <md-tab id="tab1" aria-controls="tab1-content">
-            Full Course Map
-          </md-tab>
-          <md-tab id="tab2" aria-controls="tab2-content">
-            Completed
-          </md-tab>
-        </md-tabs>
       </md-toolbar>
 
-      <md-content flex md-scroll-y>
-        <ui-view layout="column" layout-fill layout-padding>
-          <div class="inset" hide-sm></div>
-          <ng-switch on="data.selectedIndex" class="tabpanel-container">
-            <div role="tabpanel"
-            id="tab1-content"
-            aria-labelledby="tab1"
-            ng-switch-when="0"
-            md-swipe-left="next()"
-            md-swipe-right="previous()"
-            layout="row" layout-align="center center">
-            <md-card flex-gt-sm="90" flex-gt-md="80">
-              <md-card-content>
-                <h2>Course Map</h2>
-                <md-list>
-                  <md-item ng-repeat="item in courseMaterial | filter:search">
-                    <md-item-content>
-                      <div class="md-tile-content">
-                        <h3>{{item.title}}</h3>
-                        <p>
-                          Type: {{item.qnType}}
-                        </p>
-                      </div>
-                      <div class="md-tile-right inset" hide-sm>
-                        <md-checkbox ng-disabled="true" aria-label="Disabled checked checkbox" ng-model="data.cb" ng-init="data.cb=true">
-                        </div>
-                      </md-item-content>
-                      <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
-                      <md-divider hide-gt-sm ng-if="!$last"></md-divider>
-                    </md-item>
-                    <md-divider></md-divider>
-                  </md-list>
-                </md-card-content>
-              </md-card>
-            </div>
-            <div role="tabpanel"
-            id="tab2-content"
-            aria-labelledby="tab2"
-            ng-switch-when="1"
-            md-swipe-left="next()"
-            md-swipe-right="previous()"
-            layout="row" layout-align="center center">
-            <md-card flex-gt-sm="90" flex-gt-md="80">
-              <md-card-content>
-                <h2>Completed</h2>
-                <md-list>
-                  <md-item ng-repeat="item in courseMaterial | filter:search | orderBy:'title'">
-                    <md-item-content>
-                      <div class="md-tile-content">
-                        <h3>{{item.title}}</h3>
-                        <p>
-                          Type: {{item.qnType}}
-                        </p>
-                      </div>
-                      <div class="md-tile-right inset" hide-sm>
-                        <md-checkbox ng-disabled="true" aria-label="Disabled checked checkbox" ng-model="data.cb" ng-init="data.cb=true">
-                        </div>
-                      </md-item-content>
-                      <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
-                      <md-divider hide-gt-sm ng-if="!$last"></md-divider>
-                    </md-item>
-                    <md-divider></md-divider>
+      <div layout="row" flex>
+        <div flex="auto"></div>
+        <div class="md-whiteframe-z2 text-center" flex="70" style=" padding: 0px 10px;height: 70px;">
+              <h1>Pivotal Expert Course Map</h1>
+        </div>
+        <div flex="auto"></div>
+      </div>
 
-                  </md-list>
-                </md-card-content>
-              </md-card>
-            </div>
+      <div layout="row" flex>
+        <div flex="auto"></div>
+        <div class="md-whiteframe-z2" layout="column" flex="70" style="margin-top: -230px;padding: 20px 20px;">
+          <md-content flex md-scroll-y>
+          <md-card-content>
+            <h2>Chapter 1: Spreadsheets</h2>
+            <md-list>
+              <md-item ng-repeat="item in courseMaterial | filter:search">
+                <md-item-content>
+                  <div class="md-tile-content">
+                    <h3>{{item.title}}</h3>
+                    <p>
+                      Type: {{item.qnType}}
+                    </p>
+                  </div>
+                  <div class="md-tile-right inset" hide-sm>
+                    <!--
+                    <md-checkbox ng-disabled="true" aria-label="Disabled checked checkbox" ng-model="data.cb" ng-init="data.cb=true">
+                    -->
+                    <img class="coursemap-check" ng-src="images/check-circle-outline-128.png">
 
-          </ng-switch>
+                    </div>
+                  </md-item-content>
+                  <md-divider ng-if="!$last"></md-divider>
+              </md-item>
+              <md-divider></md-divider>
+            </md-list>
 
-        </ui-view>
-      </md-content>
-    </div>
+            <md-divider></md-divider>
+            <md-divider></md-divider>
+            <h2>Chapter 2: Google Sheets</h2>
+            <md-list>
+              <md-item ng-repeat="item in courseMaterial | filter:search">
+                <md-item-content>
+                  <div class="md-tile-content">
+                    <h3>{{item.title}}</h3>
+                    <p>
+                      Type: {{item.qnType}}
+                    </p>
+                  </div>
+                  <div class="md-tile-right inset" hide-sm>
+                    <md-checkbox ng-if={{item.qnProg}} ng-disabled="true" aria-label="Disabled checked checkbox" ng-model="data.cb" ng-init="data.cb=true">
+                    </div>
+                  </md-item-content>
+                  <md-divider ng-if="!$last"></md-divider>
+              </md-item>
+              <md-divider></md-divider>
+            </md-list>
+          </md-card-content>
+        </md-card>
+  </md-content>
+  </div>
+  <div flex="auto"></div>
+  </div>
+  </div>
     <!-- Angular Material Dependencies -->
     <script src="js/angular.min.js"></script>
     <script src="js/angular-animate.min.js"></script>
     <script src="js/angular-aria.min.js"></script>
     <script src="js/angular-material.min.js"></script>
     <script src="js/angular-material-icons.min.js"></script>
-  </body>
-  </html>
 
-  <script src="js/index.js"></script>
-
-
-
+    <script src="js/index.js"></script>
 
 </body>
 </html>
