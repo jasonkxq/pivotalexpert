@@ -32,7 +32,7 @@
 
       <div layout="row" flex>
         <div flex="auto"></div>
-        <div class="md-whiteframe-z2 text-center" flex="70" style=" padding: 0px 10px;height: 70px;">
+        <div class="md-whiteframe-z1 text-center" flex="70" style=" padding: 0px 10px;height: 70px;">
               <h1>Pivotal Expert Course Map</h1>
         </div>
         <div flex="auto"></div>
@@ -40,7 +40,7 @@
 
       <div layout="row" flex>
         <div flex="auto"></div>
-        <div class="md-whiteframe-z2" layout="column" flex="70" style="margin-top: -230px;padding: 20px 20px;">
+        <div class="md-whiteframe-z2" layout="column" flex="70" style="margin-top: -240px;padding: 20px 20px;">
           <md-content flex md-scroll-y>
           <md-card-content>
             <h2>Chapter 1: Spreadsheets</h2>
@@ -48,9 +48,9 @@
               <md-item ng-repeat="item in courseMaterial | filter:search">
                 <md-item-content>
                   <div class="md-tile-content">
-                    <h3>{{item.title}}</h3>
+                    <font class="font-size-course-title">{{item.title}}</font>
                     <p>
-                      Type: {{item.qnType}}
+                      <font class="font-size-normal">Type: {{item.qnType}}</font>
                     </p>
                   </div>
                   <div class="md-tile-right inset" hide-sm>
@@ -73,9 +73,9 @@
               <md-item ng-repeat="item in courseMaterial | filter:search">
                 <md-item-content>
                   <div class="md-tile-content">
-                    <h3>{{item.title}}</h3>
+                    <font class="font-size-course-title">{{item.title}}</font>
                     <p>
-                      Type: {{item.qnType}}
+                      <font class="font-size-normal">Type: {{item.qnType}}</font>
                     </p>
                   </div>
                   <div class="md-tile-right inset" hide-sm>
