@@ -6,6 +6,7 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog',
   $scope.numAchievement = "5"
   $scope.lastName = "World"
   $scope.email = "Helloworld@domain.com"
+  $scope.newQuestionChapter= '';
   $scope.toggleSidenav = function(menuId) {
     $mdSidenav(menuId).toggle();
   };

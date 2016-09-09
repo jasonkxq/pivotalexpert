@@ -26,7 +26,7 @@
           <md-button style="margin-right:10px">chat</md-button>
           <md-button style="margin-right:10px"  href="./mcq.html" >[5]</md-button>
           <md-button style="margin-right:10px" class="md-fab md-primary md-hue-2" aria-label="Profile" href="./profile.html">
-              <md-icon md-svg-src="img/icons/ic_people_24px.svg"></md-icon>
+            <md-icon md-svg-src="img/icons/ic_people_24px.svg"></md-icon>
           </md-button>
         </div>
       </md-toolbar>
@@ -35,7 +35,9 @@
         <div flex="auto"></div>
         <div class="md-whiteframe-z1 text-center" flex="70" style=" padding: 0px 10px;height: 120px;">
               <h1>Pivotal Expert Course Map</h1>
-              <md-button class="md-raised" style="margin-top: -10px;">save all changes</md-button>
+              <md-button class="md-raised" style="margin-top: -10px;">Save all changes</md-button>
+              <md-button class="md-raised" style="margin-top: -10px;">Add Chapter</md-button>
+              <md-button class="md-raised" style="margin-top: -10px;" href="./add_question.html">Add Question</md-button>
         </div>
         <div flex="auto"></div>
       </div>
@@ -61,7 +63,17 @@
                 </div>
               </div>
               <div flex="auto">
-                <h2>Chapter 1: Spreadsheets</h2>
+                <div layout="row">
+                  <div flex="auto"><h2>Chapter 1: Spreadsheets</h2></div>
+                  <div flex="10" layout="column">
+                      <div><br></div>
+                      <div layout="row">
+                        <md-button class="md-icon-button"><i class="fa fa-upload fa-lg" aria-hidden="true"></i></md-button>
+                        <md-button class="md-icon-button"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></md-button>
+                      </div>
+                      <div><br></div>
+                  </div>
+                </div>
             <md-list>
               <md-item ng-repeat="item in courseMaterial | filter:search">
                 <div layout="row" flex>
@@ -89,7 +101,10 @@
                   </div>
                   <div class="md-tile-right inset" hide-sm>
                     <md-button class="md-icon-button">
-                      <i class="fa fa-pencil"></i>
+                      <i class="fa fa-pencil fa-lg"></i>
+                    </md-button>
+                    <md-button class="md-icon-button">
+                      <i class="fa fa-times fa-lg"></i>
                     </md-button>
                   </div>
                   </md-item-content>
@@ -122,39 +137,39 @@
               </div>
               <div flex="auto">
                 <h2>Chapter 2: Google Sheets</h2>
-            <md-list>
-              <md-item ng-repeat="item in courseMaterial | filter:search">
-                <div layout="row" flex>
-                  <div flex="5">
-                    <div layout="column"" flex>
-                      <div flex="auto">
-                        <md-button class="md-icon-button md-primary">
-                          <i class="fa fa-angle-up"></i>
-                        </md-button>
+                <md-list>
+                  <md-item ng-repeat="item in courseMaterial | filter:search">
+                    <div layout="row" flex>
+                      <div flex="5">
+                        <div layout="column"" flex>
+                          <div flex="auto">
+                            <md-button class="md-icon-button md-primary">
+                              <i class="fa fa-angle-up"></i>
+                            </md-button>
+                          </div>
+                          <div flex="auto">
+                            <md-button class="md-icon-button md-primary">
+                              <i class="fa fa-angle-down"></i>
+                            </md-button>
+                          </div>
+                        </div>
                       </div>
                       <div flex="auto">
-                        <md-button class="md-icon-button md-primary">
-                          <i class="fa fa-angle-down"></i>
-                        </md-button>
-                      </div>
-                    </div>
-                  </div>
-                  <div flex="auto">
-                    <md-item-content>
-                  <div class="md-tile-content">
-                    <font class="font-size-course-title">{{item.title}}</font>
-                    <p>
-                      <font class="font-size-normal">Type: {{item.qnType}}</font>
-                    </p>
-                  </div>
-                  <div class="md-tile-right inset" hide-sm>
-                    <md-button class="md-icon-button">
-                      <i class="fa fa-pencil"></i>
-                    </md-button>
-                  </div>
-                  </md-item-content>
-                  <md-divider ng-if="!$last"></md-divider>
-              </md-item>
+                        <md-item-content>
+                          <div class="md-tile-content">
+                            <font class="font-size-course-title">{{item.title}}</font>
+                            <p>
+                              <font class="font-size-normal">Type: {{item.qnType}}</font>
+                            </p>
+                          </div>
+                          <div class="md-tile-right inset" hide-sm>
+                            <md-button class="md-icon-button">
+                              <i class="fa fa-pencil"></i>
+                            </md-button>
+                          </div>
+                        </md-item-content>
+                        <md-divider ng-if="!$last"></md-divider>
+                  </md-item>
               <md-divider></md-divider>
                   </div>
             </div>
