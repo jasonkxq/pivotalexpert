@@ -39,7 +39,7 @@
           <div flex="auto"></div>
           <div layout="column" flex="15" align="right" style="padding-right: 15px;">
             <div flex="auto"></div>
-            <div flex="auto">Chapter:</div>
+            <div flex="auto">Add to Chapter:</div>
             <div flex="auto"></div>
           </div>
           <div flex="70"><md-select ng-model="ctrl.chosenChapter">
@@ -69,9 +69,13 @@
           <div flex="auto"></div>
         </div>
 
-        <div layout="row" layout-align="center center">
-          <div style="width: 50%">
-            <md-button style="width: 100%" class="md-primary md-raised" href="./mcq_edit.html">add question</md-button>
+        <div layout="row" layout-align=" center">
+          <div flex="10">
+            <md-button type="submit" style="width: 100%" class="md-primary md-raised" href="./courseMap_edit.html">Cancel</md-button>
+          </div>
+          <div flex="10"></div>
+          <div flex="50">
+            <md-button type="submit" style="width: 100%" class="md-primary md-raised" href="./mcq_edit.html">Proceed to Add Questions</md-button>
           </div>
         </div>
 
