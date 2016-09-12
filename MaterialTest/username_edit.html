@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/angular-material.min.css">
+        <link rel="stylesheet" href="css/angular-material.css">
+  </head>
+  <body>
+    <html lang="en" ng-app="codeVantage">
+      <div layout="column" ng-controller="AppCtrl" class="relative" layout-fill role="main">
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+          </md-button>
+          <h2>
+            <span>Pivotal Expert</span>
+          </h2>
+          <span flex></span>
+          <md-button style="margin-right:10px" href="./courseMap.html" >course</md-button>
+          <md-button style="margin-right:10px">chat</md-button>
+          <md-button style="margin-right:10px"  href="./mcq.html" >[5]</md-button>
+          <md-button style="margin-right:10px" class="md-fab md-primary md-hue-2" aria-label="Profile" href="./profile.html">
+              <md-icon md-svg-src="img/icons/ic_people_24px.svg"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+
+    <form name="changeUsernameForm">
+      <div layout="row" flex>
+        <div flex="auto"></div>
+        <div class="md-whiteframe-z2" layout="column" flex="70">
+          <div style="padding: 0px 20px; background-color: #4169E1;" >
+            <h2 class="pull-left"><font color="ffffff">Edit Username</font></h2>
+          </div>
+
+          <div class="text-center" style="padding: 15px;">
+          Your username is also the link to your public profile. i.e. <br>
+          <font color="blue">https://pivotal-expert.firebaseapp.com/#/profile/</font><font color="red">{{displayName}}</font>
+        </div>
+
+          <div class="md-padding" ng-cloak="" layout="row">
+
+            <div flex="auto"></div>
+            <div layout="column" flex="15" align="right" style="padding-right: 15px;">
+              <div flex="auto"></div>
+              <div flex="auto" style="margin-right:70px;">Username: </div>
+              <div flex="auto"></div>
+            </div>
+            <div flex="70">
+              <md-input-container class="md-block">
+                <input required="true" ng-model="displayName">
+              </md-input-container>
+            </div>
+            <div flex="auto"></div>
+          </div>
+
+          <br>
+          <div layout="row" layout-align="center">
+            <div flex="10">
+              <md-button style="width: 100%" class="md-primary md-raised" href="./profile.html">Cancel</md-button>
+            </div>
+            <div flex="10"></div>
+            <div flex="50">
+              <md-button type="submit" style="width: 100%" class="md-primary md-raised" href="./profile.html">Save New Username</md-button>
+            </div>
+          </div>
+
+        </div>
+        <div flex="auto"></div>
+      </form>
+
+
+    <div flex="auto"></div>
+    </div>
+    <!-- Angular Material Dependencies -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/angular-aria.min.js"></script>
+    <script src="js/angular-material.min.js"></script>
+    <script src="js/angular-material-icons.min.js"></script>
+
+    <script src="js/index.js"></script>
+
+  </body>
+</html>

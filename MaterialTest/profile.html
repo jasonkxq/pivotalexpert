@@ -5,6 +5,7 @@
     <title>User Profile</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/angular-material.min.css">
+        <link rel="stylesheet" href="font-awesome-4.6.3/font-awesome-4.6.3/css/font-awesome.min.css">
   </head>
   <body>
     <html lang="en" ng-app="codeVantage">
@@ -30,13 +31,20 @@
         <div flex="15"></div>
         <div class="md-whiteframe-z2" layout="column" flex="70" style="padding: 15px 20px">
           <md-content flex md-scroll-y>
-                <md-card-content>
-                <div class="text-center profile-head">
-                <img src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="Profile Photo" class="profile-photo">
-                <br>
-                <h1>[ {{numAchievement}} ]</h1>
-      					<h2>User: {{displayName}}</h2>
-      					</div>
+            <md-card-content>
+            <div class="text-center profile-head">
+              <img src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="Profile Photo" class="profile-photo">
+              <br>
+              <h1>[ {{numAchievement}} ]</h1>
+              <h2>{{displayName}} 
+                <md-button class="md-icon-button" href="username_edit.html">
+                  <i class="fa fa-pencil fa-lg"></i>
+                  <md-tooltip md-direction="right" md-delay="300">
+                    edit username
+                  </md-tooltip>
+                </md-button>
+              </h2>
+  					</div>
 
                 <md-divider></md-divider>
                 <md-divider></md-divider>
