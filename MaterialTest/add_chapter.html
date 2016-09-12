@@ -26,74 +26,64 @@
       </div>
     </md-toolbar>
 
+    <form name="addChapterForm">
 
-    <div layout="row" flex>
-      <div flex="auto"></div>
-      <div class="md-whiteframe-z2" layout="column" flex="70">
-        <div style="padding: 0px 20px; background-color: #4169E1;" >
-          <h2 class="pull-left">Insert Chapter</h2>
-        </div>
+      <div layout="row" flex>
+        <div flex="auto"></div>
+        <div class="md-whiteframe-z2" layout="column" flex="70">
+          <div style="padding: 0px 20px; background-color: #4169E1;" >
+            <h2 class="pull-left"><font color="ffffff">Insert Chapter</font></h2>
+          </div>
 
-        <div class="md-padding" ng-cloak="" layout="row">
-          <div flex="auto"></div>
-          <div layout="column" flex="15" align="right" style="padding-right: 15px;">
+          <div class="md-padding" ng-cloak="" layout="row">
             <div flex="auto"></div>
-            <div flex="auto">Insert after Chapter:</div>
+            <div layout="column" flex="15" align="right" style="padding-right: 15px;">
+              <div flex="auto"></div>
+              <div flex="auto">Insert after Chapter:</div>
+              <div flex="auto"></div>
+            </div>
+            <div flex="70"><md-select ng-model="ctrl.chosenChapter">
+              <md-option ng-repeat="chapter in ctrl.chapters" ng-value="chapter.abbrev" ng-required="true">
+                {{chapter.abbrev}}
+              </md-option>
+            </md-select>
+            </div>
             <div flex="auto"></div>
           </div>
-          <div flex="70"><md-select ng-model="ctrl.chosenChapter">
-            <md-option><em>None</em></md-option>
-            <md-option ng-repeat="chapter in ctrl.chapters" ng-value="chapter.abbrev" >
-              {{chapter.abbrev}}
-            </md-option>
-          </md-select>
-          </div>
-          <div flex="auto"></div>
-        </div>
 
-        <div class="md-padding" ng-cloak="" layout="row">
-          <div flex="auto"></div>
-          <div layout="column" flex="15" align="right" style="padding-right: 15px;">
+          <div class="md-padding" ng-cloak="" layout="row">
             <div flex="auto"></div>
-            <div flex="auto">File Location:</div>
+            <div layout="column" flex="15" align="right" style="padding-right: 15px;">
+              <div flex="auto"></div>
+              <div flex="auto">Chapter Name</div>
+              <div flex="auto"></div>
+            </div>
+            <div flex="70">
+              <md-input-container class="md-block">
+                <label>Pick a Unique Name</label>
+                <input required="true" name="chapterName" ng-model="addChapter.chapterNam" >
+                <div ng-messages="addChapterForm.chapterName.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+            </div>
             <div flex="auto"></div>
           </div>
-          <div flex="70"><input ng-model="" style="width: 100%;">
-          </div>
-          <div flex="auto"></div>
-        </div>
-        <br>
-        <div layout="row" layout-align="center center">
-          <div style="width: 50%">
-            <md-button style="width: 100%" class="md-primary md-raised" href="./mcq_edit.html">Insert Chapter</md-button>
-          </div>
-        </div>
 
-        <br><br>
-        <div style="padding: 0px 20px; background-color: #4169E1;" >
-          <h2 class="pull-left">Replace all Chapters</h2>
-        </div>
-        <br>
-        <div class="md-padding" ng-cloak="" layout="row">
-          <div flex="auto"></div>
-          <div layout="column" flex="15" align="right" style="padding-right: 15px;">
-            <div flex="auto"></div>
-            <div flex="auto">File Location:</div>
-            <div flex="auto"></div>
+          <br>
+          <div layout="row" layout-align=" center">
+            <div flex="10">
+              <md-button type="submit" style="width: 100%" class="md-primary md-raised" href="./courseMap_edit.html">Cancel</md-button>
+            </div>
+            <div flex="10"></div>
+            <div flex="50">
+              <md-button type="submit" style="width: 100%" class="md-primary md-raised" href="./mcq_edit.html">Proceed to Add Questions</md-button>
+            </div>
           </div>
-          <div flex="70"><input ng-model="" style="width: 100%;">
-          </div>
-          <div flex="auto"></div>
-        </div>
-        <br>
-        <div layout="row" layout-align="center center">
-          <div style="width: 50%">
-            <md-button style="width: 100%" class="md-primary md-raised" href="./mcq_edit.html">Replace all Chapters</md-button>
-          </div>
-        </div>
 
-      </div>
-      <div flex="auto"></div>
+        </div>
+        <div flex="auto"></div>
+      </form>
 
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js'></script>
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js'></script>
