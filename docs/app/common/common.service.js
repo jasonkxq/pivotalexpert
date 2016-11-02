@@ -7,15 +7,13 @@
   
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyDt22-VriobDs7cNfkmY8yxHur9IQBewWo",
-    authDomain: "pivotal-expert.firebaseapp.com",
-    databaseURL: "https://pivotal-expert.firebaseio.com",
-    storageBucket: "firebase-pivotal-expert.appspot.com",
-    messagingSenderId: "841641391530"
-  };
-  
-  //Replace with your login google account email
-  var adminEmail = "cboesch@smu.edu.sg";
+    apiKey: "AIzaSyCqVASNsPA6IjRqyZKdfe-dDNKj_nlGWxM",
+    authDomain: "jasons-project-c6fe3.firebaseapp.com",
+    databaseURL: "https://jasons-project-c6fe3.firebaseio.com",
+    storageBucket: "jasons-project-c6fe3.appspot.com",
+    messagingSenderId: "847993315351"
+  };  //Replace with your login google account email
+  var adminEmail = "jason.koh.2014@smu.edu.sg";
   
   //Replace with the name of your course
   var courseName = "Pivotal Expert";
