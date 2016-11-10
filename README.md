@@ -25,7 +25,7 @@ Go through a Slides walkthrough at https://docs.google.com/presentation/d/1NLY_w
 ### 2. Fork your personal copy of pivotalexpert
   1. click on the 'Fork' button next to 'Star' button at the top right of this page.
   
-3. Change configuration of your personal copy of pivotalexpert
+### 3. Change configuration of your personal copy of pivotalexpert
   1. Click 'find file' (next to 'copy path') located near the top right.
   2. Search for 'settings.js
     1. Alternatively you can nevigate to: docs/settings.js
@@ -38,13 +38,13 @@ Go through a Slides walkthrough at https://docs.google.com/presentation/d/1NLY_w
   10. You should see in green "Your site is published at https://username.github.io/pivotalexpert/"
   11. copy a portion of the link, after 'https://' and before '/pivotalexpert/'. (e.g username.github.io).
   
-4. Change configuration on firebase
+### 4. Change configuration on firebase
   1. head back to the firebase website you left open earlier.
   2. At the Auth Tab on the left, click on "Sign-In Method" tab, then enable Google Login and click "Save".
   3. scroll down. Under 'OAuth redirect domains' click 'add domain'.
   4. Paste the link copied earlier in step 3.11. (e.g username.github.io) Then click 'Add'.
   
-5. Configure Google API
+### 5. Configure Google API
   1. Sign in to https://console.developers.google.com
   2. Click on the "Library" tab on the left and look for Google Apps API section and click on "Drive API". Click on "Enable" button on the top to activate this API.
   3. Click on the "Library" tab on the left and look for Google Apps API section and click on "Sheets API". Click on "Enable" button on the top to activate this API.
@@ -61,7 +61,7 @@ After installing Node.js, run 'npm install -g firebase-tools' in cmd.
 Instructions to install can be found at https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 ## Initial Configuration
-1. To download the application, you can choose:
+### 1. To download the application, you can choose:
   1. Using Git
     1. Go to your preferred directory, open cmd and run 'git clone https://github.com/wuhuu/pivotalexpert.git'
 
@@ -70,7 +70,7 @@ Instructions to install can be found at https://git-scm.com/book/en/v2/Getting-S
     2. Click on the green 'Clone or download' button on the right.
     3. Unzip the file in your preferred directory.
 
-2. Create and Change Firebase Settings
+### 2. Create and Change Firebase Settings
   1. Go to your https://firebase.google.com/ and login in with your Google Account and click to "Go to Console"
   2. Create a new project in Firebase
   3. At the home page, click "Add Firebase to your web app"
@@ -90,7 +90,7 @@ Instructions to install can be found at https://git-scm.com/book/en/v2/Getting-S
   8. Replace the "adminEmail" object with your Google Account email which you planned to use as an educator.
   9. Replace the "courseName" object with your preferred application name.
   10. After which, save the file and exit the text editor.
-3. Configure Google API
+### 3. Configure Google API
   1. Sign in to https://console.developers.google.com
   2. Click on the "Library" tab on the left and look for Google Apps API section and click on "Drive API". Click on "Enable" button on the top to activate this API.
   3. Click on the "Library" tab on the left and look for Google Apps API section and click on "Sheets API". Click on "Enable" button on the top to activate this API.
@@ -98,15 +98,15 @@ Instructions to install can be found at https://git-scm.com/book/en/v2/Getting-S
 
 
 ## Running locally
-1. Initial Run
+### 1. Initial Run
   1. Open cmd in your preferred directory folder and run 'npm install'
   2. After which, run 'npm run serve' and the web application will be run locally at http://locahost:8080
-2. Subsequent Run
+### 2. Subsequent Run
   1. Open cmd in your preferred directory folder and run 'npm run serve'
 
 ## Deploying it to Firebase
-1. Open cmd in your preferred directory folder 
-2. For initial use:
+### 1. Open cmd in your preferred directory folder 
+### 2. For initial use:
   1. run 'firebase login'
   2. run 'firebase init'
     1. When prompted "What Firebase CLI features do you want to setup for this folder?", press ENTER.
@@ -118,5 +118,5 @@ Instructions to install can be found at https://git-scm.com/book/en/v2/Getting-S
   3. run 'firebase use --add'
     1. Choose the project you have created on Firebase and press ENTER.
     2. Type in an alias for the project and press ENTER.
-3. Subsequently, as long as the firebase login account is the same, just run 'firebase deploy' to upload the application files to Firebase.
-4. The link to the application will be listed in the cmd.
+### 3. Subsequently, as long as the firebase login account is the same, just run 'firebase deploy' to upload the application files to Firebase.
+### 4. The link to the application will be listed in the cmd.
