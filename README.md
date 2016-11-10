@@ -6,7 +6,7 @@ Go through a Slides walkthrough at https://docs.google.com/presentation/d/1NLY_w
 
 ## Initial Configuration
 
-1. Create and Change Firebase Settings
+### 1. Create and Change Firebase Settings
   1. Go to your https://firebase.google.com/ and login in with your Google Account and click to "Go to Console"
   2. Create a new project in Firebase
   3. At the home page, click "Add Firebase to your web app"
@@ -22,7 +22,7 @@ Go through a Slides walkthrough at https://docs.google.com/presentation/d/1NLY_w
   ```
   5.leave this page open as we will be coming back to it.
   
-2. Fork your personal copy of pivotalexpert
+### 2. Fork your personal copy of pivotalexpert
   1. click on the 'Fork' button next to 'Star' button at the top right of this page.
   
 3. Change configuration of your personal copy of pivotalexpert
